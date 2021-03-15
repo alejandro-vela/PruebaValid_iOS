@@ -161,13 +161,13 @@ import RealmSwift
 }
 
 // MARK: - Species
-@objcMembers class Species:Object, Decodable {
-    let name: String
-    let url: String
+@objcMembers class Species: Object, Decodable {
+    @objc dynamic var name: String
+    @objc dynamic var url: String
 
-    init(name: String, url: String) {
-        self.name = name
-        self.url = url
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case url = "url"
     }
 }
 // MARK: - Sprites
